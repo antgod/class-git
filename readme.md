@@ -18,16 +18,27 @@ Host gitlib
   IdentityFile ~/.ssh/id_rsa_ant
 ```
 
+## rebase
+代码合并，修改注释并且合并注释。产生的结果是分支不产生分叉。
+```
+git rebase origin/master
+## 修改冲突
+git add .
+git rebase --continue
+```
+
+- You can instead skip this commit: run "git rebase --skip".
+- To abort and get back to the state before "git rebase", run "git rebase --abort".
+
 ## HEAD
 1. HEAD是上次提交的指针
-1. HEAD^是上上次提交
-1. HEAD@{21}前21次提交
-1. master@{yesterday}昨天对master提交
+2. HEAD^是上上次提交
+3. HEAD@{21}前21次提交
+4. master@{yesterday}昨天对master提交
 
 ## 查看提交
 ```
 git show commitId | HEAD^
-
 ```
 
 ## 储藏
@@ -81,3 +92,7 @@ git stash pop
 	git reset --hard HEAD^
 	git push origin branch -f
 	```
+## 拉取远程分支
+```
+git checkout origin/branch
+```
